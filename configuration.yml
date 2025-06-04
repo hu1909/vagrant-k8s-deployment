@@ -1,0 +1,19 @@
+network: 
+  cidr: 192.168.56.0/24 
+  gateway: 192.168.56.1
+  control_plane_ip: 192.168.56.10
+  starting_ip: 192.168.56.15 
+
+machines: 
+  - name: control-plane
+    role: control-plane 
+  - name: worker-1 
+    role: worker 
+  - name: worker-2
+    role: worker 
+
+storages:
+  - name: control-plane 
+    path: ./storage/controlplane-node
+  - name: worker-node 
+    path: ./storage/worker-node
