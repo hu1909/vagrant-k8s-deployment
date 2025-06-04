@@ -44,6 +44,7 @@ Vagrant.configure("2") do |config|
         node.vm.synced_folder "./storage/controlplane-node/", "/vagrant-data/"
       else 
         node.vm.provision "shell", path: "bash-script/worker-node.sh"
+        node.vm.synced_folder "shell", path: "bash-script/join.sh"
         node.vm.synced_folder "./storage/worker-node/", "/vagrant-data/"
       end     
 

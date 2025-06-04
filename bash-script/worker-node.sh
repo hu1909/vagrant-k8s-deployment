@@ -16,4 +16,7 @@ sudo apt-mark hold kubelet kubeadm
 sudo systemctl start kubelet
 sudo systemctl enable --now kubelet
 
-./vagrant-data-script/join.sh 
+cd /vagrant-data-script
+chmod +x join.sh 
+sudo ./join.sh
+
