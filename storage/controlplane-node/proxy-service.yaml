@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxysql-service
+  namespace: klaara-application
+spec:
+  selector:
+    app: proxysql
+  ports:
+    - name: mysql
+      port: 3306
+      targetPort: 6033

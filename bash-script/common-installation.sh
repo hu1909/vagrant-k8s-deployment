@@ -11,9 +11,9 @@ CRIO_VERSION=v1.32
 # echo "127.0.0.1 controlplane" | sudo tee -a /etc/hosts
 
 # Set DNS server
-cat <<EOF | sudo tee /etc/resolv.conf
- nameserver 8.8.8.8
- nameserver 8.8.4.4
+cat <<EOF | sudo tee /etc/systemd/resolved.conf
+[Resolve]
+DNS=8.8.8.8 1.1.1.1
 EOF
 
 sudo systemctl restart systemd-resolved
